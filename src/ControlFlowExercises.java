@@ -19,6 +19,22 @@ public class ControlFlowExercises {
 //        for(long x = 2; x < 1000000; x *= x){
 //            System.out.println(x);
 //        }
-
+//        2)
+//        int x = 0;
+//        while(x <= 99){
+//            x++;
+//            if(x % 3 == 0 && x % 5 == 0 ){
+//                System.out.println("FizzBuzz");
+//                continue;
+//            } else if (x % 5 == 0){
+//                System.out.println("Buzz");
+//                continue;
+//            } else if (x % 3 == 0){
+//                System.out.println("Fizz");
+//                continue;
+//            }
+//            System.out.println(x);
+//        }
+//        3)
     }
 }
