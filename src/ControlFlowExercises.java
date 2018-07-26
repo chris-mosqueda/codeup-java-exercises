@@ -21,6 +21,7 @@ public class ControlFlowExercises {
 //        for(long x = 2; x < 1000000; x *= x){
 //            System.out.println(x);
 //        }
+
 //        2)
 //        int x = 0;
 //        while(x <= 99){
@@ -37,16 +38,51 @@ public class ControlFlowExercises {
 //            }
 //            System.out.println(x);
 //        }
+
 //        3)
         Scanner sc = new Scanner(System.in);
-        System.out.print("What number would you like to go up to? : ");
-        int userNum = sc.nextInt();
-        System.out.println("Here is your number table");
-        System.out.println("number | squared | cubed\n-------------------------");
+//        boolean goAgain = true;
+//        while(goAgain){
+//            System.out.print("What number would you like to go up to? : ");
+//            int userNum = sc.nextInt();
+//            System.out.println("\nHere is your number table\n");
+//            System.out.println("number | squared | cubed\n------ | ------- | -----");
+//
+//            for(long i = 1; i <= userNum; i++){
+//                System.out.println(i + "\t   |" + (i*i) + "\t\t |" + Math.round(Math.pow(i,i)));
+//            }
+//            System.out.println("Do you want to enter another number? (y/n): ");
+//            String userContinue = sc.next();
+//            if(userContinue.equalsIgnoreCase("n")){
+//                goAgain = false;
+//            }
+//        }
 
-        for(long i = 1; i <= userNum; i++){
-            System.out.println(i + "\t\t" + (i*i) + "\t\t\t" + Math.round(Math.pow(i,i)));
-        }
-
+//        4)
+        boolean goAgain = true;
+        do {
+            System.out.print("What is your grade from 0 - 100?: ");
+            int userGrade = sc.nextInt();
+            if (userGrade > 97 && userGrade <= 100) {
+                System.out.println("Grade: A+");
+            } else if (userGrade > 93 && userGrade <= 97) {
+                System.out.println("Grade: A");
+            } else if (userGrade > 87 && userGrade <= 93) {
+                System.out.println("Grade: A-");
+            } else if (userGrade > 79 && userGrade <= 87) {
+                System.out.println("Grade: B");
+            } else if (userGrade > 66 && userGrade <= 79) {
+                System.out.println("Grade: C");
+            } else if (userGrade > 59 && userGrade <= 66) {
+                System.out.println("Grade: D");
+            } else if (userGrade >= 0 && userGrade <= 59) {
+                System.out.println("Grade: Fail");
+            }
+            System.out.println("Do you want to enter another number? (y/n): ");
+            String userContinue = sc.next();
+            if(userContinue.equalsIgnoreCase("n")){
+                goAgain = false;
+            }
+        }while(goAgain);
     }
 }
