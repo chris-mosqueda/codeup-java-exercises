@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class ControlFlowExercises {
     public static void main(String[] args) {
 //        1.A
@@ -36,5 +38,15 @@ public class ControlFlowExercises {
 //            System.out.println(x);
 //        }
 //        3)
+        Scanner sc = new Scanner(System.in);
+        System.out.print("What number would you like to go up to? : ");
+        int userNum = sc.nextInt();
+        System.out.println("Here is your number table");
+        System.out.println("number | squared | cubed\n-------------------------");
+
+        for(long i = 1; i <= userNum; i++){
+            System.out.println(i + "\t\t" + (i*i) + "\t\t\t" + Math.round(Math.pow(i,i)));
+        }
+
     }
 }
