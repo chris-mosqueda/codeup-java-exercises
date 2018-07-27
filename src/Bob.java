@@ -5,7 +5,7 @@ public class Bob {
         boolean endConvo = true;
         while(endConvo){
             Scanner sc = new Scanner(System.in);
-            System.out.print("Let's talk to Bob:\nTo stop conversation type \"Stop\": ");
+            System.out.print("Let's talk to Bob:\nTo stop conversation type \"stop\": ");
             String convo = sc.nextLine();
             if(convo.endsWith("!")){
                 System.out.println("\nBob: Whoa, chill out!\n");
