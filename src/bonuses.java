@@ -1,10 +1,102 @@
 public class bonuses {
     public static void main(String[] args) {
-//                ------ 2 ------
-//        Create a method that will return how many capital letters are in a string.
+        //#1
+        countVowels("onceupontime");
+        //#2
+        getCaps("sOmeThInG");
+
+    }
+    //        ------ 1 ------
+// Create a vowel counting method for each vowel in the alphabet (not including y).
+// Each method, when passed a string, should return how many of that vowel is in the string.
+// Given a string, use all of the these vowel counting methods to output the count of each vowel in a word.
 //
-//                ------ 3 ------
-//        Create a method, getType() that will take in an input and return a string describing the type of the value. Account for int, boolean, String, char, and double. Use method overloading.
+//                EXAMPLE...
+//
+//        INPUT: countVowels("cat")
+//
+//        OUTPUT:
+//        |======== VOWEL COUNT ========|
+//        | A's | E's | I's | O's | U's |
+//                | 1   | 0   | 0   | 0   | 0   |
+//                |=============================|
+//
+//        countVowels() will use...
+//        countAs(),
+//                countEs(),
+//                countIs(),
+//                countOs(),
+//                and countUs()
+    public static void countVowels(String word){
+        System.out.println("|======== VOWEL COUNT ========|");
+        System.out.println("| A's | E's | I's | O's | U's |");
+        System.out.print("|");
+        System.out.printf(" %-4d", countAs(word));
+        System.out.print("|");
+        System.out.printf(" %-4d", countEs(word));
+        System.out.print("|");
+        System.out.printf(" %-4d", countIs(word));
+        System.out.print("|");
+        System.out.printf(" %-4d", countOs(word));
+        System.out.print("|");
+        System.out.printf(" %-4d", countUs(word));
+        System.out.println("|");
+        System.out.println("|=============================|");
+        System.out.println();
+    }
+    public static int countAs(String getAs){
+        int count = 0;
+        for(int i = 0; i < getAs.length(); i++){
+            if(getAs.charAt(i) == 'a'){
+                count++;
+            }
+        }
+        return count;
+    }
+    public static int countEs(String getEs){
+        int count = 0;
+        for(int i = 0; i < getEs.length(); i++){
+            if(getEs.charAt(i) == 'e'){
+                count++;
+            }
+        }
+        return count;
+    }
+    public static int countIs(String getIs){
+        int count = 0;
+        for(int i = 0; i < getIs.length(); i++){
+            if(getIs.charAt(i) == 'i'){
+                count++;
+            }
+        }
+        return count;
+    }
+    public static int countOs(String getOs){
+        int count = 0;
+        for(int i = 0; i < getOs.length(); i++){
+            if(getOs.charAt(i) == 'o'){
+                count++;
+            }
+        }
+        return count;
+    }
+    public static int countUs(String getUs){
+        int count = 0;
+        for(int i = 0; i < getUs.length(); i++){
+            if(getUs.charAt(i) == 'u'){
+                count++;
+            }
+        }
+        return count;
+    }
+//  ------ 2 ------ Create a method that will return how many capital letters are in a string.
+    public static void getCaps(String str){
+        for(int i = 0; i < str.length(); i++){
+            System.out.println(str.charAt(i));
+//            if(str.charAt(i) == )
+        }
+    }
+//  ------ 3 ------ Create a method, getType() that will take in an input and return a string describing the type of the value. Account for int, boolean, String, char, and double. Use method overloading.
 //
 //        ------ 4 ------
 //        Create a method to print out every letter in a string using recursion.
@@ -54,29 +146,5 @@ public class bonuses {
 //
 //        input - 12/01/1999
 //        output - December 12, 1999
-        public static String vowelCount(){
-            //        ------ 1 ------
-//        Create a vowel counting method for each vowel in the alphabet (not including y).
-// Each method, when passed a string, should return how many of that vowel is in the string.
-// Given a string, use all of the these vowel counting methods to output the count of each vowel in a word.
-//
-//                EXAMPLE...
-//
-//        INPUT: countVowels("cat")
-//
-//        OUTPUT:
-//        |======== VOWEL COUNT ========|
-//        | A's | E's | I's | O's | U's |
-//                | 1   | 0   | 0   | 0   | 0   |
-//                |=============================|
-//
-//        countVowels() will use...
-//        countAs(),
-//                countEs(),
-//                countIs(),
-//                countOs(),
-//                and countUs()
-//
-        }
-    }
 }
+
