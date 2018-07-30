@@ -1,32 +1,38 @@
+import java.lang.reflect.Type;
+import java.util.Scanner;
+
 public class bonuses {
+
     public static void main(String[] args) {
         //#1
         countVowels("onceupontime");
         //#2
-        getCaps("sOmeThInG");
+        System.out.println(getCaps("sOmeThInGabcNMTYU"));
+        //#3
+        System.out.println(getType("hello"));
+        System.out.println(getType(true));
+        System.out.println(getType('t'));
+        System.out.println(getType(5));
+        System.out.println(getType(1.2));
+        //#4
+        runThrough("longword", 0);
+        //#5
+        System.out.println(palindrome("rotor"));
 
+        //#7
+        calculator();
     }
     //        ------ 1 ------
-// Create a vowel counting method for each vowel in the alphabet (not including y).
-// Each method, when passed a string, should return how many of that vowel is in the string.
-// Given a string, use all of the these vowel counting methods to output the count of each vowel in a word.
-//
-//                EXAMPLE...
-//
+// Create a vowel counting method for each vowel in the alphabet. Given a string, use multiple
+// vowel counting methods to output the count of each vowel in a word.
+//        EXAMPLE...
 //        INPUT: countVowels("cat")
-//
 //        OUTPUT:
 //        |======== VOWEL COUNT ========|
 //        | A's | E's | I's | O's | U's |
-//                | 1   | 0   | 0   | 0   | 0   |
-//                |=============================|
-//
-//        countVowels() will use...
-//        countAs(),
-//                countEs(),
-//                countIs(),
-//                countOs(),
-//                and countUs()
+//        | 1   | 0   | 0   | 0   | 0   |
+//        |=============================|
+//        countVowels() will use... countAs(), countEs(), countIs() etc...
     public static void countVowels(String word){
         System.out.println("|======== VOWEL COUNT ========|");
         System.out.println("| A's | E's | I's | O's | U's |");
@@ -90,30 +96,103 @@ public class bonuses {
         return count;
     }
 //  ------ 2 ------ Create a method that will return how many capital letters are in a string.
-    public static void getCaps(String str){
+    public static int getCaps(String str){
+        int count = 0;
         for(int i = 0; i < str.length(); i++){
-            System.out.println(str.charAt(i));
-//            if(str.charAt(i) == )
+            if(str.charAt(i) == str.toUpperCase().charAt(i)){
+                count++;
+            }
         }
+        return count;
     }
 //  ------ 3 ------ Create a method, getType() that will take in an input and return a string describing the type of the value. Account for int, boolean, String, char, and double. Use method overloading.
-//
-//        ------ 4 ------
-//        Create a method to print out every letter in a string using recursion.
-//
-//                ------ 5 ------
-//        Create a method to determine if a string is a palindrome.
-//
-//                ------ 6 ------
-//        Create a method that will convert a written out whole number from "zero" to "ninety-nine" and return the actual number.
-//
+    public static String getType(String str){
+        return str.getClass().getName();
+    }
+    public static String getType(Boolean inBool){
+        return inBool.getClass().getName();
+    }
+    public static String getType(Character letter){
+        return letter.getClass().getName();
+    }
+    public static String getType(Integer num){
+        return num.getClass().getName();
+    }
+    public static String getType(Double dub){
+        return dub.getClass().getName();
+    }
+//  ------ 4 ------ Create a method to print out every letter in a string using recursion.
+    public static void runThrough(String wordya, Integer count){
+        if(count >= wordya.length()){
+            System.out.println("Prints letters using recursion\n");
+            return;
+        }
+        System.out.println(wordya.charAt(count));
+        runThrough(wordya, count + 1);
+    }
+//  ------ 5 ------ Create a method to determine if a string is a palindrome.
+    public static String palindrome(String str){
+        String reverse = new StringBuilder(str).reverse().toString();
+        if(str.equalsIgnoreCase(reverse)){
+            return "Yes " + str + " is a palindrome\n";
+        } else {
+            return "No it's not a palindrome\n";
+        }
+    }
+//  ------ 6 ------ Create a method that will convert a written out whole number from "zero" to "ninety-nine" and return the actual number.
+//    public static int wordNum(String number){
+//      !!!!!!!!!!!!!!!!!!!!!!!!!!
+//    }
 //        ------ 7 ------
 //        Create a command line calculator
 //                - the user may enter a number
 //                - the user may enter an operator
 //                - the user may enter a second number
 //        - the program should output a result, then prompt the user for another calculation
-//
+    public static void calculator(){
+        Scanner sc = new Scanner(System.in);
+        boolean calcAgain = true;
+        Double equals = Double.valueOf(0);
+        while(calcAgain){
+            System.out.print("First number: ");
+            Double firstNum = sc.nextDouble();
+
+            System.out.print("What is the operator?: ");
+            String operator = sc.next();
+
+            System.out.print("What is the second number: ");
+            Double secondNum = sc.nextDouble();
+            switch (operator){
+                case "+":
+                    equals = firstNum + secondNum;
+                    System.out.println(firstNum + secondNum);
+                    break;
+                case "-":
+                    equals = firstNum - secondNum;
+                    System.out.println(firstNum - secondNum);
+                    break;
+                case "*":
+                    equals =  firstNum * secondNum;
+                    System.out.println(firstNum * secondNum);
+                    break;
+                case "/":
+                    equals =  firstNum / secondNum;
+                    System.out.println(firstNum / secondNum);
+                    break;
+                default:
+                    System.out.println("Not a valid operation");
+                    equals = Double.valueOf(00.0);
+                    break;
+            }
+            sc.nextLine();
+            System.out.println("Would you like another calculation? (yes/ no): ");
+            String goAgain = sc.nextLine();
+            if(goAgain.equalsIgnoreCase("n")){
+                calcAgain = false;
+            }
+        }
+
+    }
 //        ------ 8 ------
 //        Build a time conversion application:
 //        The user should be prompted which time to enter (12 hour or 24 hour time), then the user should be able to enter a given time. The user should then see the converted time (12 hour to 24 hour or 24 hour to 12 hour)
