@@ -6,6 +6,11 @@ public class Input {
     //private available only in this Class
     private Scanner scanner = new Scanner(System.in);
 
+    public String getString(String prompt){
+        System.out.println(prompt);
+        return this.scanner.nextLine();
+    }
+
     public String getString(){
         System.out.print("type something: ");
         return this.scanner.nextLine();
@@ -29,6 +34,11 @@ public class Input {
             }
         }
         return userNum;
+    }
+
+    public int getInt(String prompt){
+        System.out.print(prompt);
+        return this.scanner.nextInt();
     }
 
     public int getInt(){
