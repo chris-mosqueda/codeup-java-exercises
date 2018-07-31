@@ -3,19 +3,18 @@ import java.util.Random;
 import java.util.Arrays;
 
 public class ServerNameGenerator {
-    String[] adjs = {"Happy", "Angry", "Sad", "Tall", "Short", "Hungry", "Full", "Tired", "Round", "Empty"};
-    String[] nouns = {"Home", "Mall", "Store", "School", "Car", "Truck", "Bike", "Computer", "Phone", "Circuit"};
+    //static means we do not have to make a new ServNameGenerator Instance under main()... and still use them
+    private static String[] adjs = {"Happy", "Angry", "Sad", "Tall", "Short", "Hungry", "Full", "Tired", "Round", "Empty"};
+    private static String[] nouns = {"Home", "Mall", "Store", "School", "Car", "Truck", "Bike", "Computer", "Phone", "Circuit"};
 
-    public String randomValue(String[] arr){
+    private static String randomValue(String[] arr){
         int rand = new Random().nextInt(arr.length);
         return arr[rand];
     }
 
     public static void main(String[] args) {
-        ServerNameGenerator newName = new ServerNameGenerator();
-        String newAdj = newName.randomValue(newName.adjs);
-        String newNoun = newName.randomValue(newName.nouns);
-        System.out.println("Here is you server name:\n" + newAdj + "-" + newNoun);
+        //do not have to make > new ServerNam... obj because we use - private static... instances
+        System.out.println("Here is you server name:\n" + randomValue(adjs) + "-" + randomValue(nouns));
     }
 
 }
