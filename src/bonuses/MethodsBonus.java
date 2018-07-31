@@ -1,7 +1,9 @@
+package bonuses;
+
 import java.lang.reflect.Type;
 import java.util.Scanner;
 
-public class bonuses {
+public class MethodsBonus {
 
     public static void main(String[] args) {
         //#1
