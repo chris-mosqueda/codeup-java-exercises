@@ -8,12 +8,13 @@ public class ArrayBonus {
         
         int listAmount = newInput.getInt("How many items will be entered?");
         System.out.println();
-
+        //make new array - outArr of GroceryItem Obj's
         GroceryItem[] outArr = new GroceryItem[listAmount];
         int i = 0;
         //inside the outArr - array
         System.out.println();
         for(GroceryItem item : outArr){
+            System.out.print("");
             String addedName = newInput.getString("What is the name of your item? ");
             int addedQuant = newInput.getInt("Quantity? ");
             System.out.println();
