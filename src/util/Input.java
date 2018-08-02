@@ -6,8 +6,17 @@ public class Input {
     //private available only in this Class
     private Scanner scanner = new Scanner(System.in);
 
+    public String consumeLine(){
+        return this.scanner.nextLine();
+    }
+
+    public String getWord(String prompt){
+        System.out.print(prompt);
+        return this.scanner.next();
+    }
+
     public String getString(String prompt){
-        System.out.println(prompt);
+        System.out.print(prompt);
         return this.scanner.nextLine();
     }
 
