@@ -11,8 +11,24 @@ public class Product {
         this.skuNum = pSku;
     }
 
-    public String showItem(){
-        return name + skuNum;
+    public String getName(){
+        return this.name;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public int getSkuNum(){
+        return this.skuNum;
+    }
+
+    public String showProd(){
+        return name + "SKU: " + skuNum;
+    }
+
+    public String lookAtProd(){
+        return "Look at this item";
     }
 }
 /*
@@ -25,12 +41,5 @@ BONUS #1
         - include a few additional properties and methods unique to each subclass
         - override at least one method
         - add an additional method that will call a parent method that has been overridden
-    Add a static property to ProductTester called products that will hold product objects.
-    Add a static method called addProduct in the ProductTester class that will create a
-      Product object based on a string name of the product subclass passed in to the method and create
-      a new array with the current product objects plus the new product object and store the array in
-      the products property on the ProductTester class
-    Add another static method to ProductTester called productCount that will return the number of
-      elements in the products array.
-    Create a class called ProductTester with a main method to test out the above code...
+
  */
