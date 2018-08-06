@@ -64,3 +64,34 @@ public class GradesApplication {
         }
     }
 }
+/*
+        !!!!! BONUS - not done yet...!!!!!!
+Continue Working on The Grading Application... (from the collections exercise)
+
+- Modify your CLI to provide an option to view the overall class average
+- Modify your CLI to provide an option to print a csv report of all the
+  students;
+    Example Output
+
+        name,github_username,average
+        Zach,zgulde,81.2
+        Ryan,ryanorsinger,88.3
+        Fernando,fmendozaro,90.4
+        ...
+
+- Add an attendance property to your Student objects. It should be a
+  HashMap<String, String>. The keys should be strings representing the date,
+  in the format "2017-10-02", and the values should be Strings that are one
+  of "A" (Absent) or "P" (Present).
+
+    - Add a method named `recordAttendance(String date, String value)` that adds
+      records to the attendance HashMap. This method should make sure `value` is
+      an an acceptable string (one of "A" or "P").
+    - Create an instance method on your Student class to calculate a
+      student's attendance percentage -- (Total Days - Absences) / Total Days
+    - Add the attendance information to the output of your command line
+      interface, this should require only a small change
+    - Create an instance method on Student that finds the specific days a
+      student was absent. This method should return a List of Strings, where
+      each string is the date of the absence
+ */
