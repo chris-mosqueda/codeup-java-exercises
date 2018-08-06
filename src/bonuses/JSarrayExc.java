@@ -52,7 +52,9 @@ public class JSarrayExc {
          *  > second([1, 2, 3, 4, 5]) // returns 2
          *  > last([1, 2, 3, 4, 5]) // return 5
          */
-
+//        public static void first(int[] num){
+//            System.out.println(num.);
+//        }
 
         //================================= SECOND Array Asgn part 1 =================================
         /*
@@ -116,9 +118,5 @@ public class JSarrayExc {
          * string, and <li> tags around each planet.
          */
 
-    }
-
-    public static void first(int[] num){
-        System.out.println(num.);
     }
 }
