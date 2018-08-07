@@ -1,57 +1,62 @@
 package bonuses;
 
 import java.util.ArrayList;
+import util.Input;
 
 public class JSarrayExc {
     public static void main(String[] args) {
+        Input newIn = new Input();
+        int userNum = newIn.getInt();
+        System.out.println(userNum);
+
         // ====================== JAVA BONUS (from CollectionsBonus) ===========================
         // Redo JS arrays exercises using Java ArrayList
-        /** TODO: Create an array of 4 people's names and store it in a variable called
-         * 'names'. */
-        ArrayList<String> names = new ArrayList<>();
-        names.add("Bob");
-        names.add("Sue");
-        names.add("Jim");
-        names.add("Tina");
-        System.out.println(names);
-        /**
-         * TODO: Create a log statement that will log the number of elements in the names
-         * array. */
-        System.out.println(names.size());
-        /**
-         * TODO: Create log statements that will print each of the names individually by
-         * accessing each element's index. */
-        System.out.println("\nIndividual - print");
-        System.out.println(names.get(0));
-        System.out.println(names.get(1));
-        System.out.println(names.get(2));
-        System.out.println(names.get(3));
-        /**
-         * TODO: Write some code that uses a for loop to log every item in the names
-         * array. */
-        System.out.println("\nfor - loop");
-        for(int i = 0; i < names.size(); i ++){
-            System.out.println(names.get(i));
-        }
-        /**
-         * TODO: Refactor your above code to use a `forEach` loop */
-        System.out.println("\nfor each - loop");
-        for(String eachName: names){
-            System.out.println(eachName);
-        }
-        /**
-         * TODO:
-         * Create the following three functions, each will accept an array and
-         * return an element from it
-         * - first: returns the first item in the array
-         * - second: returns the second item in the array
-         * - last: returns the last item in the array
-         *
-         * Example:
-         *  > first([1, 2, 3, 4, 5]) // returns 1
-         *  > second([1, 2, 3, 4, 5]) // returns 2
-         *  > last([1, 2, 3, 4, 5]) // return 5
-         */
+//        /** TODO: Create an array of 4 people's names and store it in a variable called
+//         * 'names'. */
+//        ArrayList<String> names = new ArrayList<>();
+//        names.add("Bob");
+//        names.add("Sue");
+//        names.add("Jim");
+//        names.add("Tina");
+//        System.out.println(names);
+//        /**
+//         * TODO: Create a log statement that will log the number of elements in the names
+//         * array. */
+//        System.out.println(names.size());
+//        /**
+//         * TODO: Create log statements that will print each of the names individually by
+//         * accessing each element's index. */
+//        System.out.println("\nIndividual - print");
+//        System.out.println(names.get(0));
+//        System.out.println(names.get(1));
+//        System.out.println(names.get(2));
+//        System.out.println(names.get(3));
+//        /**
+//         * TODO: Write some code that uses a for loop to log every item in the names
+//         * array. */
+//        System.out.println("\nfor - loop");
+//        for(int i = 0; i < names.size(); i ++){
+//            System.out.println(names.get(i));
+//        }
+//        /**
+//         * TODO: Refactor your above code to use a `forEach` loop */
+//        System.out.println("\nfor each - loop");
+//        for(String eachName: names){
+//            System.out.println(eachName);
+//        }
+//        /**
+//         * TODO:
+//         * Create the following three functions, each will accept an array and
+//         * return an element from it
+//         * - first: returns the first item in the array
+//         * - second: returns the second item in the array
+//         * - last: returns the last item in the array
+//         *
+//         * Example:
+//         *  > first([1, 2, 3, 4, 5]) // returns 1
+//         *  > second([1, 2, 3, 4, 5]) // returns 2
+//         *  > last([1, 2, 3, 4, 5]) // return 5
+//         */
 //        public static void first(int[] num){
 //            System.out.println(num.);
 //        }
