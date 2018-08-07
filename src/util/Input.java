@@ -37,7 +37,7 @@ public class Input {
         int userNum = 0;
         while(keepAsking) {
             System.out.print("\nEnter number within " + min + " - " + max + " : ");
-             userNum = this.scanner.nextInt();
+            userNum = this.scanner.nextInt();
             if (userNum >= min && userNum <= max) {
                 keepAsking = false;
             }
@@ -46,13 +46,35 @@ public class Input {
     }
 
     public int getInt(String prompt){
-        System.out.print(prompt);
-        return this.scanner.nextInt();
+        int realNum = 0;
+        boolean correctNum = true;
+        while(correctNum){
+            try {
+                System.out.print("\n" + prompt);
+                String userNum = this.scanner.nextLine();
+                Integer.valueOf(userNum);
+                realNum = Integer.parseInt(userNum);
+                correctNum = false;
+            } catch (Exception e){
+                System.out.println(e.fillInStackTrace());
+                System.out.println("Not a valid number, please try again...");
+            }
+        }
+        return realNum;
     }
 
     public int getInt(){
-        System.out.print("\nEnter a whole number: ");
-        return(this.scanner.nextInt());
+        int realNum;
+                      //Uses .getString() to save input String
+        String userNum = this.getString("\nPick a number: ");
+            try {
+                realNum = Integer.valueOf(userNum);
+            } catch (Exception e){
+                System.out.println(e.fillInStackTrace());
+                System.out.println("Not a valid number, please try again...");
+                realNum = getInt(); //Recursion, will repeat method if it keeps failing
+            }
+        return realNum;
     }
 
     public double getDouble(double min, double max){
@@ -69,7 +91,27 @@ public class Input {
     }
 
     public double getDouble(){
-        System.out.print("\nEnter a number (double): ");
-        return(this.scanner.nextDouble());
+        boolean correctNum = true;
+        double realNum = 0;
+        while(correctNum){
+            System.out.print("\nEnter a number (double): ");
+            String userNum = this.scanner.nextLine();
+            try {
+                realNum = Double.parseDouble(userNum);
+                correctNum = false;
+            } catch(Exception e) {
+                System.out.println(e.fillInStackTrace());
+                System.out.println("Not a valid number, please try again...");
+            }
+        }
+        return realNum;
     }
+//    ========================== Bonus ============================
+//    public int getBinary(){
+//
+//    }
+//
+//    public int getHex(){
+//
+//    }
 }
