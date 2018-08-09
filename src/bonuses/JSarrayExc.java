@@ -1,6 +1,7 @@
 package bonuses;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import util.Input;
@@ -42,84 +43,72 @@ public class JSarrayExc {
         for(String eachName: names){
             System.out.println(eachName);
         }
-        /**
-         * TODO:
-         * Create the following three functions, each will accept an array and
-         * return an element from it
-         * - first: returns the first item in the array
-         * - second: returns the second item in the array
-         * - last: returns the last item in the array
-         *
-         * Example:
-         *  > first([1, 2, 3, 4, 5]) // returns 1
-         *  > second([1, 2, 3, 4, 5]) // returns 2
-         *  > last([1, 2, 3, 4, 5]) // return 5
-         */
-//        public static void first(int[] num){
-//            System.out.println(num.);
-//        }
+        ArrayList<Integer> numbers = new ArrayList<>();
+        numbers.add(111);
+        numbers.add(222);
+        numbers.add(6);
+        numbers.add(7);
+        numbers.add(999);
+
+        first(numbers);
+        second(numbers);
+        last(numbers);
 
         //================================= SECOND Array Asgn part 1 =================================
-        /*
-        var planets = [
-            'Mercury',
-            'Venus',
-            'Earth',
-            'Mars',
-            'Jupiter',
-            'Saturn',
-            'Uranus',
-            'Neptune'
-         ];
-         */
+         ArrayList<String> planets = new ArrayList<>() {{
+                add("Mercury");
+                add("Venus");
+                add("Earth");
+                add("Mars");
+                add("Jupiter");
+                add("Saturn");
+                add("Uranus");
+                add("Neptune");
+        }};
         /**
-         * TODO:
-         * Read each console log below, and write some javascript code to perform
-         * the step that it describes
-         */
-
+         * TODO: Read each console log below, and write some javascript code to perform
+         * the step that it describes */
 //        console.log('Adding "The Sun" to the beginning of the planets array.');
-//        console.log(planets);
-//
+        planets.add(0,"Sun");
 //        console.log('Adding "Pluto" to the end of the planets array.');
-//        console.log(planets);
-//
+        planets.add(planets.size(), "Pluto");
+        System.out.println(planets);
 //        console.log('Removing "The Sun" from the beginning of the planets array.');
-//        console.log(planets);
-//
+        planets.remove(0);
+        System.out.println(planets);
 //        console.log('Removing "Pluto" from the end of the planets array.');
-//        console.log(planets);
-//
+        planets.remove(planets.size() - 1);
+        System.out.println(planets);
 //        console.log('Finding and logging the index of "Earth" in the planets array.');
-//
+        System.out.println(planets.indexOf("Earth"));
 //        console.log("Reversing the order of the planets array.");
-//        console.log(planets);
-//
+        Collections.reverse(planets);
+        System.out.println(planets);
 //        console.log("Sorting the planets array.");
-//        console.log(planets);
-        //================================= SECOND Array Asgn part 2 =================================
-//        var planetsString = "Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune";
-//        var planetsArray;
+        Collections.sort(planets);
+        System.out.println(planets);
 
-        /**
-         * TODO:
-         * Convert planetsString to an array, and save it in a variable named
-         * planetsArray.
-         * console.log planetsArray to check your work
-         */
-
-        // console.log(planetsArray);
-
-        /**
-         * TODO:
-         * Create a string with <br> tags between each planet. console.log() your
-         * results. Why might this be useful?
-         *
-         * BONUS:
-         * Create another string that would display your planets in an undordered
-         * list. You will need an opening AND closing <ul> tags around the entire
-         * string, and <li> tags around each planet.
-         */
-
+    }
+    /**
+     * TODO:
+     * Create the following three functions, each will accept an array and
+     * return an element from it
+     * - first: returns the first item in the array
+     * - second: returns the second item in the array
+     * - last: returns the last item in the array
+     *
+     * Example:
+     *  > first([1, 2, 3, 4, 5]) // returns 1
+     *  > second([1, 2, 3, 4, 5]) // returns 2
+     *  > last([1, 2, 3, 4, 5]) // return 5
+     */
+    public static void first(ArrayList<Integer> num){
+        System.out.println(num.get(0));
+    }
+    public static void second(ArrayList<Integer> num){
+        System.out.println(num.get(1));
+    }
+    public static void last(ArrayList<Integer> num){
+        System.out.println(num.get(num.size() - 1));
     }
 }

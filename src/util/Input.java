@@ -28,7 +28,6 @@ public class Input {
     public boolean yesNo() {
         System.out.print("\nWant to continue? (yes/no): ");
         String proceed = this.scanner.next();
-        //if user types 'yes' or 'y' will return true
         return (proceed.equalsIgnoreCase("y") || proceed.equalsIgnoreCase("yes"));
     }
 
@@ -67,27 +66,27 @@ public class Input {
         int realNum;
                       //Uses .getString() to save input String
         String userNum = this.getString("\nPick a number: ");
-            try {
-                realNum = Integer.valueOf(userNum);
-            } catch (Exception e){
-                System.out.println(e.fillInStackTrace());
-                System.out.println("Not a valid number, please try again...");
-                realNum = getInt(); //Recursion, will repeat method if it keeps failing
-            }
+        try {
+            realNum = Integer.valueOf(userNum);
+        } catch (Exception e){
+            System.out.println(e.fillInStackTrace());
+            System.out.println("Not a valid number, please try again...");
+            realNum = getInt(); //Recursion, will repeat method if it keeps failing
+        }
         return realNum;
     }
 
     public double getDouble(double min, double max){
-        boolean keepAsking = true;
-        double userNum = 0;
-        while(keepAsking) {
-            System.out.print("\nEnter number within " + min + " - " + max + " : ");
-            userNum = this.scanner.nextDouble();
-            if (userNum >= min && userNum <= max) {
-                keepAsking = false;
-            }
+        double realNum;
+        String userNum = this.getString("\nEnter number within " + min + " - " + max + " : ");
+        try {
+            realNum = Double.valueOf(userNum);
+        } catch (Exception e) {
+            System.out.println(e.fillInStackTrace());
+            System.out.println("Not a valid number, please try again...");
+            realNum = getDouble();
         }
-        return userNum;
+        return realNum;
     }
 
     public double getDouble(){
